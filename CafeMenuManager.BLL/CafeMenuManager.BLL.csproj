@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CafeMenuManager.DAL\CafeMenuManager.DAL.csproj" />
+    <ProjectReference Include="..\CafeMenuManager.Model\CafeMenuManager.Model.csproj" />
+  </ItemGroup>
+
 </Project>

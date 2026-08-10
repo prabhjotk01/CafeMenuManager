@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CafeMenuManager.BLL\CafeMenuManager.BLL.csproj" />
+    <ProjectReference Include="..\CafeMenuManager.Model\CafeMenuManager.Model.csproj" />
+  </ItemGroup>
+
 </Project>

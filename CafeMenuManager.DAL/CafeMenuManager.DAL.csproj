@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CafeMenuManager.Model\CafeMenuManager.Model.csproj" />
+  </ItemGroup>
+
 </Project>
