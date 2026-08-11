@@ -23,7 +23,14 @@ namespace CafeMenuManager.DAL
         {
             base.OnModelCreating(modelBuilder);
 
-            
+            // Category
+            modelBuilder.Entity<Category>()
+                .HasKey(c => c.CategoryId);
+
+            modelBuilder.Entity<Category>()
+                .Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(100);
 
             // MenuItem
             modelBuilder.Entity<MenuItem>()
@@ -58,11 +65,7 @@ namespace CafeMenuManager.DAL
                 .IsRequired()
                 .HasMaxLength(100);
 
-            // Many-to-Many: MenuItem <-> Ingredient
-            modelBuilder.Entity<MenuItem>()
-                .HasMany(m => m.Ingredients)
-                .WithMany(i => i.MenuItems)
-                .UsingEntity(j => j.ToTable("MenuItemIngredients"));
+            
         }
     }
 }
