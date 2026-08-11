@@ -23,14 +23,7 @@ namespace CafeMenuManager.DAL
         {
             base.OnModelCreating(modelBuilder);
 
-            // Category
-            modelBuilder.Entity<Category>()
-                .HasKey(c => c.CategoryId);
-
-            modelBuilder.Entity<Category>()
-                .Property(c => c.Name)
-                .IsRequired()
-                .HasMaxLength(100);
+            
 
             // MenuItem
             modelBuilder.Entity<MenuItem>()
