@@ -1,3 +1,5 @@
+using CafeMenuManager.DAL;
+using Microsoft.EntityFrameworkCore;
 namespace CafeMenuManager
 {
     public class Program
