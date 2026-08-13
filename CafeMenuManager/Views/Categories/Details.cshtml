@@ -1,0 +1,20 @@
+﻿@model CafeMenuManager.Model.Category
+
+<h1>Category Details</h1>
+
+<p><strong>Name:</strong> @Model.Name</p>
+
+<h4>Menu Items</h4>
+
+@if (Model.MenuItems != null)
+{
+    <ul>
+        @foreach (var item in Model.MenuItems)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
+}
+
+<a asp-action="Edit" asp-route-id="@Model.CategoryId" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

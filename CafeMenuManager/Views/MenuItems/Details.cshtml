@@ -1,0 +1,14 @@
+﻿@model CafeMenuManager.Model.MenuItem
+
+<h1>Menu Item Details</h1>
+
+<div>
+    <h4>@Model.Name</h4>
+
+    <p><strong>Description:</strong> @Model.Description</p>
+    <p><strong>Price:</strong> $@Model.Price</p>
+    <p><strong>Category:</strong> @Model.Category?.Name</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.MenuItemId" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>
