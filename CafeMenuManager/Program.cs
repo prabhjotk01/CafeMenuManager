@@ -1,4 +1,5 @@
 using CafeMenuManager.DAL;
+using CafeMenuManager.BLL;
 using Microsoft.EntityFrameworkCore;
 namespace CafeMenuManager
 {
@@ -14,6 +15,9 @@ namespace CafeMenuManager
             builder.Services.AddDbContext<CafeMenuContext>(options =>
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<MenuItemService>();
+            builder.Services.AddScoped<CategoryService>();
+            builder.Services.AddScoped<IngredientService>();
 
             var app = builder.Build();
 
