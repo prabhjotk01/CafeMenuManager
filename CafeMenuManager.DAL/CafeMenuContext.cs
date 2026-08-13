@@ -1,4 +1,6 @@
-﻿using CafeMenuManager.Model;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using CafeMenuManager.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CafeMenuManager.DAL
 {
-    public class CafeMenuContext : DbContext
+    public class CafeMenuContext : IdentityDbContext<IdentityUser>
     {
         public CafeMenuContext(DbContextOptions<CafeMenuContext> options)
             : base(options)
