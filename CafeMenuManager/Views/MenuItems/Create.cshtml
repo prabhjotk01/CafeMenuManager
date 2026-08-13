@@ -4,6 +4,8 @@
 
 <form asp-action="Create" method="post">
 
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
         <input asp-for="Name" class="form-control" />
@@ -23,11 +25,43 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="CategoryId" class="form-label">Category ID</label>
-        <input asp-for="CategoryId" class="form-control" />
+        <label asp-for="CategoryId" class="form-label">Category</label>
+
+        <select asp-for="CategoryId"
+                asp-items="ViewBag.Categories"
+                class="form-control">
+            <option value="">-- Select Category --</option>
+        </select>
+
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
 
+    <div class="mb-3">
+        <label class="form-label">Ingredients</label>
+
+        @foreach (var ingredient in ViewBag.Ingredients)
+        {
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="checkbox"
+                       name="selectedIngredients"
+                       value="@ingredient.IngredientId" />
+
+                <label class="form-check-label">
+                    @ingredient.Name
+                </label>
+            </div>
+        }
+    </div>
+
     <button type="submit" class="btn btn-primary">Create</button>
+
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

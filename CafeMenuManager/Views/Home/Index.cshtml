@@ -1,8 +1,101 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero-section">
+
+    <div class="hero-content">
+
+        <h1>☕ Cafe Menu Manager</h1>
+
+        <p class="hero-subtitle">
+            Manage your cafe menu, categories, and ingredients
+            all in one simple place.
+        </p>
+
+        <div class="hero-buttons">
+            <a asp-controller="MenuItems"
+               asp-action="Index"
+               class="btn btn-cafe">
+                View Menu
+            </a>
+
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Dashboard"
+                   asp-action="Index"
+                   class="btn btn-outline-cafe">
+                    Dashboard
+                </a>
+            }
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h2>Everything You Need</h2>
+        <p class="text-muted">
+            Easily manage the important parts of your cafe menu.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">☕</div>
+                <h3>Menu Items</h3>
+                <p>
+                    Add, update and manage your cafe menu items
+                    with prices and descriptions.
+                </p>
+
+                <a asp-controller="MenuItems"
+                   asp-action="Index"
+                   class="btn btn-cafe">
+                    Manage Menu
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">🏷️</div>
+                <h3>Categories</h3>
+                <p>
+                    Organize menu items into categories such as
+                    Coffee, Tea and Desserts.
+                </p>
+
+                <a asp-controller="Categories"
+                   asp-action="Index"
+                   class="btn btn-cafe">
+                    View Categories
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">🥛</div>
+                <h3>Ingredients</h3>
+                <p>
+                    Keep track of ingredients used by your
+                    different menu items.
+                </p>
+
+                <a asp-controller="Ingredients"
+                   asp-action="Index"
+                   class="btn btn-cafe">
+                    View Ingredients
+                </a>
+            </div>
+        </div>
+
+    </div>
+
 </div>

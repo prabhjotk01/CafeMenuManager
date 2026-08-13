@@ -1,9 +1,11 @@
 ﻿using CafeMenuManager.BLL;
 using CafeMenuManager.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CafeMenuManager.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
         private readonly CategoryService _categoryService;
@@ -73,7 +75,7 @@ namespace CafeMenuManager.Controllers
 
             return View(category);
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var category = _categoryService.GetById(id);
@@ -86,6 +88,7 @@ namespace CafeMenuManager.Controllers
             return View(category);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)

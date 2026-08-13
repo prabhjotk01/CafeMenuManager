@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CafeMenuManager.BLL/CafeMenuManager.BLL.csproj" />
+  <Project Path="CafeMenuManager.DAL/CafeMenuManager.DAL.csproj" />
+  <Project Path="CafeMenuManager.Model/CafeMenuManager.Model.csproj" />
+  <Project Path="CafeMenuManager/CafeMenuManager.csproj" />
+</Solution>

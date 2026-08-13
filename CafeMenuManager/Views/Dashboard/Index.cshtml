@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center mb-5">
+    <h1>☕ Cafe Dashboard</h1>
+    <p class="text-muted">
+        Overview of your cafe menu management system
+    </p>
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <div class="feature-icon">☕</div>
+
+            <h2>@ViewBag.MenuItemCount</h2>
+
+            <p>Total Menu Items</p>
+
+            <a asp-controller="MenuItems"
+               asp-action="Index"
+               class="btn btn-cafe">
+                Manage Menu
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <div class="feature-icon">🏷️</div>
+
+            <h2>@ViewBag.CategoryCount</h2>
+
+            <p>Total Categories</p>
+
+            <a asp-controller="Categories"
+               asp-action="Index"
+               class="btn btn-cafe">
+                Manage Categories
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <div class="feature-icon">🥛</div>
+
+            <h2>@ViewBag.IngredientCount</h2>
+
+            <p>Total Ingredients</p>
+
+            <a asp-controller="Ingredients"
+               asp-action="Index"
+               class="btn btn-cafe">
+                Manage Ingredients
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-5">
+    <h3>Quick Actions</h3>
+
+    <a asp-controller="MenuItems"
+       asp-action="Create"
+       class="btn btn-cafe m-2">
+        + Add Menu Item
+    </a>
+
+    <a asp-controller="Categories"
+       asp-action="Create"
+       class="btn btn-cafe m-2">
+        + Add Category
+    </a>
+
+    <a asp-controller="Ingredients"
+       asp-action="Create"
+       class="btn btn-cafe m-2">
+        + Add Ingredient
+    </a>
+</div>
